@@ -77,24 +77,25 @@ class DingTalkCrypto:
 
 
 if __name__ == "__main__":
-    token = "123456"
-    encode_aes_key = '4g5j64qlyl3zvetqxz5jiocdr586fn2zvjpa8zls3ij'
-    din_corpid = 'suite4xxxxxxxxxxxxxxx'
-    # 调用上面的工具类
-    dtc = DingTalkCrypto(encode_aes_key, din_corpid)
-    # 加密
-    encrypt = dtc.encrypt('success') # 加密数据
-    timestamp = str(int(round(time.time()))) # 时间戳 (秒)
-    nonce = dtc.generateRandomKey(8)  # 随机字符串
-    # 生成签名
-    signature = dtc.generateSignature(nonce, timestamp, token, encrypt)
-    # 构造返回数据
-    new_data = {
-        'data': {
-            'msg_signature': signature,
-            'timeStamp': timestamp,
-            'nonce': nonce,
-            'encrypt': encrypt
-        }
-    }
-    pprint.pprint(new_data)
+    # token = "123456"
+    # encode_aes_key = '4g5j64qlyl3zvetqxz5jiocdr586fn2zvjpa8zls3ij'
+    # din_corpid = 'suite4xxxxxxxxxxxxxxx'
+    # # 调用上面的工具类
+    # dtc = DingTalkCrypto(encode_aes_key, din_corpid)
+    # # 加密
+    # encrypt = dtc.encrypt('success') # 加密数据
+    # timestamp = str(int(round(time.time()))) # 时间戳 (秒)
+    # nonce = dtc.generateRandomKey(8)  # 随机字符串
+    # # 生成签名
+    # signature = dtc.generateSignature(nonce, timestamp, token, encrypt)
+    # # 构造返回数据
+    # new_data = {
+    #     'data': {
+    #         'msg_signature': signature,
+    #         'timeStamp': timestamp,
+    #         'nonce': nonce,
+    #         'encrypt': encrypt
+    #     }
+    # }
+    # pprint.pprint(new_data)
+    a = DingTalkCrypto(key="***", encodingAesKey="**")
